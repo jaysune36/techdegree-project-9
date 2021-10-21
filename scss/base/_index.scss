@@ -1,6 +1,6 @@
 /*=====================================
-        PARTIAL IMPORTS
+        BASE PARTIALS
 ======================================*/
 
-//Base Partial
-@import 'base/index'
+@import 'reset',
+        'base'
