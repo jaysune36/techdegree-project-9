@@ -1,0 +1,27 @@
+//Sections
+
+section {
+  & h2{
+    color: #ebebeb;
+    position: relative;
+    font-size: 3em;
+  }
+  & span {
+    color: #000;
+    font-size: .75em;
+    position: absolute;
+    top: 50%;
+  }
+  & .heading-sub-one {
+    left: 140px;
+  }
+  & .heading-sub-two {
+    left: 110px;
+  }
+  & .heading-sub-three {
+    left: 120px;
+  }
+  & .heading-sub-four {
+    left: 175px;
+  }
+}

@@ -1,0 +1,16 @@
+// Media Queries
+
+@media(min-width: 768px) {
+  .main-header {
+    & .main-name {
+      opacity: 0;
+    }
+    &:hover .main-name {
+      opacity: 1;
+      transition: .5s ease-in;
+    }
+    & .main-name:hover {
+      cursor: pointer;
+    }
+  }
+}

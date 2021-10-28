@@ -372,6 +372,36 @@ img {
   width: 100%;
 }
 
+section h2 {
+  color: #ebebeb;
+  position: relative;
+  font-size: 3em;
+}
+section span {
+  color: #000;
+  font-size: 0.75em;
+  position: absolute;
+  top: 50%;
+}
+section .heading-sub-one {
+  left: 140px;
+}
+section .heading-sub-two {
+  left: 110px;
+}
+section .heading-sub-three {
+  left: 120px;
+}
+section .heading-sub-four {
+  left: 175px;
+}
+
+.main-name,
+section {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .main-header {
   color: #fff;
   position: relative;
@@ -385,14 +415,24 @@ img {
 }
 .main-header .main-name {
   position: absolute;
-  opacity: 0;
 }
-.main-header:hover .main-name {
-  opacity: 1;
-  transition: 0.5s ease-in;
+
+.nav-bar {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: 1em;
 }
-.main-header .main-name:hover {
-  cursor: pointer;
+
+.nav-list {
+  text-align: center;
+  padding-inline-start: 0;
+}
+.nav-list li {
+  margin-bottom: 0.5em;
+}
+.nav-list a {
+  color: #fff;
 }
 
 .main-header {
@@ -402,6 +442,19 @@ img {
 .main-header {
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .main-header .main-name {
+    opacity: 0;
+  }
+  .main-header:hover .main-name {
+    opacity: 1;
+    transition: 0.5s ease-in;
+  }
+  .main-header .main-name:hover {
+    cursor: pointer;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,3 +1,9 @@
+.main-name,
+section {
+  width: 90%;
+  @include center;
+}
+
 .main-header {
   color: $primary-white;
   position: relative;
@@ -10,13 +16,23 @@
   }
   & .main-name {
     position: absolute;
-    opacity: 0;
   }
-  &:hover .main-name {
-    opacity: 1;
-    transition: .5s ease-in;
+}
+
+.nav-bar {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.nav-list {
+  text-align: center;
+  padding-inline-start: 0;
+  & li {
+    margin-bottom: .5em;
   }
-  & .main-name:hover {
-    cursor: pointer;
+  & a {
+    color: $primary-white;
   }
 }
