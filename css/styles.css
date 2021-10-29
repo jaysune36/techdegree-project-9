@@ -370,6 +370,8 @@ a {
 ======================================*/
 img {
   width: 100%;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
 }
 
 section h2 {
@@ -397,7 +399,7 @@ section .heading-sub-four {
 }
 
 .main-name,
-section {
+.container {
   width: 90%;
   margin: 0 auto;
 }
@@ -433,6 +435,18 @@ section {
 }
 .nav-list a {
   color: #fff;
+}
+
+section {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.portfolio-item {
+  border-bottom: 1px solid #f0f0f0;
+  margin-top: 0.5em;
+}
+.portfolio-item p:first-of-type {
+  font-size: 1.5rem;
 }
 
 .main-header {

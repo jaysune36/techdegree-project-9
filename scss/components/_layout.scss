@@ -1,5 +1,5 @@
 .main-name,
-section {
+.container {
   width: 90%;
   @include center;
 }
@@ -34,5 +34,18 @@ section {
   }
   & a {
     color: $primary-white;
+  }
+}
+
+section {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.portfolio-item {
+  border-bottom: 1px solid #f0f0f0;
+  margin-top: .5em;
+  & p:first-of-type {
+    font-size: 1.5rem;
+
   }
 }
