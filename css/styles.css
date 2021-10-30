@@ -352,6 +352,7 @@ template {
 
 body {
   font-family: "Poppins", sans-serif;
+  color: #818181;
 }
 
 ul {
@@ -370,7 +371,6 @@ a {
 ======================================*/
 img {
   width: 100%;
-  border-radius: 10px;
   border: 1px solid #f0f0f0;
 }
 
@@ -419,6 +419,27 @@ section .heading-sub-four {
   position: absolute;
 }
 
+@keyframes slideOut {
+  0% {
+    height: 0;
+  }
+  30% {
+    height: 50%;
+  }
+  70% {
+    height: 100%;
+  }
+}
+#about {
+  transition: 2s ease-out;
+}
+#about p {
+  border-left: 1px solid #000;
+  padding-left: 0.5em;
+  height: 0;
+  overflow: hidden;
+}
+
 .nav-bar {
   position: absolute;
   top: 50%;
@@ -442,11 +463,13 @@ section {
 }
 
 .portfolio-item {
-  border-bottom: 1px solid #f0f0f0;
   margin-top: 0.5em;
 }
 .portfolio-item p:first-of-type {
   font-size: 1.5rem;
+}
+.portfolio-item .portfolio-info {
+  border: 1px solid #f0f0f0;
 }
 
 .main-header {
