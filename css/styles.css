@@ -419,25 +419,21 @@ section .heading-sub-four {
   position: absolute;
 }
 
-@keyframes slideOut {
-  0% {
-    height: 0;
-  }
-  30% {
-    height: 50%;
-  }
-  70% {
-    height: 100%;
-  }
-}
 #about {
-  transition: 2s ease-out;
+  padding-left: 0.5em;
 }
-#about p {
+#about .display {
   border-left: 1px solid #000;
   padding-left: 0.5em;
-  height: 0;
+  transition: all 0.5s ease-in-out;
   overflow: hidden;
+}
+#about h2:hover {
+  cursor: pointer;
+}
+
+.hide {
+  max-height: 0;
 }
 
 .nav-bar {
@@ -456,6 +452,11 @@ section .heading-sub-four {
 }
 .nav-list a {
   color: #fff;
+}
+.nav-list a:hover {
+  color: #a8a8a8;
+  transform: scale(1.5);
+  transition: all 0.4s ease-in-out;
 }
 
 section {

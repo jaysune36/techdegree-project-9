@@ -19,28 +19,22 @@
   }
 }
 
-@keyframes slideOut {
-  0% {
-    height: 0;
+// Trying to create a sliding transition for aboutMe when clicked
+#about {
+  padding-left: .5em;
+  & .display {
+    border-left: 1px solid #000;
+    padding-left: .5em;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
   }
-
-  30% {
-    height: 50%;
-  }
-
-  70% {
-    height: 100%;
+  & h2:hover {
+    cursor: pointer;
   }
 }
 
-#about {
-  transition: 2s ease-out;
-  & p {
-    border-left: 1px solid #000;
-    padding-left: .5em;
-    height: 0;
-    overflow: hidden;
-  }
+.hide {
+  max-height: 0;
 }
 
 .nav-bar {
@@ -58,6 +52,11 @@
   }
   & a {
     color: $primary-white;
+  }
+  & a:hover {
+    color: #a8a8a8;
+    transform: scale(1.5);
+    transition: all .4s ease-in-out;
   }
 }
 
