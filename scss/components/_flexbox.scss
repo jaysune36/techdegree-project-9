@@ -1,10 +1,16 @@
 //Flexbox
 
-.main-header {
+.main-header,
+.nav-bar {
   display: flex;
 }
 
 .main-header {
   align-items: center;
   justify-content: center;
+}
+
+.nav-bar {
+  justify-content: center;
+  align-content: center;
 }

@@ -7,8 +7,17 @@ document.addEventListener('DOMContentLoaded', ()=> {
     if(e.target !== aboutInfo) {
       const aboutSection = e.target.closest('section');
       if(aboutSection){
-        info.classList.toggle('hide');
+        if(info.className === 'display') {
+        // aboutInfo.classList.toggle('expand-section')
+        info.classList.toggle('slide-down');
+        info.style.overflow = '';
+        info.style.maxHeight = '100%';
+      } else {
+        info.classList.toggle('slide-down');
+        info.style.overflow = 'hidden';
+        info.style.maxHeight = '0';
       }
+    }
     } 
   })
 
