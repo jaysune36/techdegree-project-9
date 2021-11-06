@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
       const aboutSection = e.target.closest('section');
       if(aboutSection){
         if(info.className === 'display') {
-        // aboutInfo.classList.toggle('expand-section')
         info.classList.toggle('slide-down');
         info.style.overflow = '';
         info.style.maxHeight = '100%';

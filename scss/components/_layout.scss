@@ -19,12 +19,16 @@
   }
 }
 
-// Trying to create a sliding transition for aboutMe when clicked
-
 @keyframes slide-down {
   0% {
+    height: 0;
+  }
+  30% {
     opacity: 0;
     transform: translateY(-60px);
+  }
+  90% {
+    height: auto;
   }
   100% {
     opacity: 1;
@@ -32,18 +36,8 @@
   }
 }
 
-@keyframes expand-section {
-  0% {
-    transform: scale(1, 1);
-  }
-  100% {
-    transform: scale(1, 1.2);
-  }
-}
-
 #about {
   padding-left: .5em;
-  transition: border-bottom .8s ease-in-out;
   & .display {
     border-left: 1px solid #000;
     padding-left: .5em;
@@ -55,13 +49,9 @@
   }
 }
 
-.expand-section {
-  animation: expand-section 2s ease-in-out forwards;
-}
-
 .slide-down {
   transform-origin: top center;
-  animation: slide-down .5s ease-in-out forwards;
+  animation: slide-down .9s ease-in-out forwards;
 }
 
 .nav-bar {
@@ -84,7 +74,7 @@
   }
   & a:hover {
     color: #a8a8a8;
-    transition: all .4s ease-in-out;
+    transition: all .3s ease-in-out;
     transform: scale(1.3);
   }
 }
