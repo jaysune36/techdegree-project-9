@@ -1,0 +1,10 @@
+//Grid
+
+.skills {
+  display: grid;
+}
+
+.skills {
+  @include center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}

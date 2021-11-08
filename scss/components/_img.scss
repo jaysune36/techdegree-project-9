@@ -5,3 +5,11 @@ img {
   border: 1px solid #f0f0f0;
   filter: grayscale(100%);
 }
+
+.no-filter {
+  filter: grayscale(0);
+}
+
+svg {
+  width: 20%;
+}
