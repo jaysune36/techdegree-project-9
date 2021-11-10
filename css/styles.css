@@ -482,8 +482,42 @@ section .heading-sub-four {
   cursor: pointer;
 }
 
+@keyframes html {
+  0% {
+    content: " >";
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(20px);
+    content: " >";
+  }
+}
 #skills:hover {
   cursor: pointer;
+}
+
+.html svg:hover {
+  fill: #d51406;
+}
+.html .html-svg:hover::before {
+  font-size: 2.5em;
+  animation: html 1s ease-in-out infinite alternate;
+}
+.html .html-svg:hover::after {
+  font-size: 2.5em;
+  animation: html 1s linear forwards;
+}
+
+.css svg:hover {
+  fill: #2683c8;
+}
+
+.js svg:hover {
+  fill: #f5e936;
+}
+
+.sass svg:hover {
+  fill: #e52489;
 }
 
 .skills {

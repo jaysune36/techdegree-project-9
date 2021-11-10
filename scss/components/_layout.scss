@@ -74,9 +74,54 @@
   }
 }
 
+@keyframes html {
+  0% {
+    content: ' \003E';
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(20px);
+    content: ' \003E';
+  }
+}
+
 #skills {
   &:hover {
     cursor: pointer;
+  }
+}
+
+.html {
+  & svg:hover {
+    fill: #d51406;
+  }
+  & .html-svg:hover::before {
+    font-size: 2.5em;
+    animation: html 1s ease-in-out infinite alternate;
+    // content: ' \003C';
+  }
+  & .html-svg:hover::after {
+    font-size: 2.5em;
+    animation: html 1s linear forwards;
+    // content: ' \003E';
+  }
+}
+
+.css {
+  & svg:hover {
+    fill: #2683c8;
+  }
+}
+
+.js {
+  & svg:hover {
+    fill: #f5e936;
+  }
+}
+
+.sass {
+  & svg:hover {
+    fill: #e52489;  
   }
 }
 
