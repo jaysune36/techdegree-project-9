@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', ()=> {
+document.addEventListener('DOMContentLoaded', () => {
   const aboutInfo = document.getElementById('about');
   const nav = document.querySelector('.nav-bar');
   const info = aboutInfo.querySelector('.display');
@@ -18,25 +18,25 @@ document.addEventListener('DOMContentLoaded', ()=> {
   }
 
   aboutInfo.addEventListener('click', (e) => {
-    if(e.target !== aboutInfo) {
+    if (e.target !== aboutInfo) {
       const aboutSection = e.target.closest('section');
-      if(aboutSection){
-        if(info.className === 'display') {
-        slideDownShow(info);
-      } else {
-        slideDownHide(info);
+      if (aboutSection) {
+        if (info.className === 'display') {
+          slideDownShow(info);
+        } else {
+          slideDownHide(info);
+        }
       }
     }
-    } 
   })
 
   portfolio.addEventListener('click', (e) => {
-    if(e.target.tagName === 'IMG') {
+    if (e.target.tagName === 'IMG') {
       const portfolioInfo = e.target.nextElementSibling.firstElementChild;
-      if(portfolioInfo.className === '') {
-      e.target.classList.toggle('no-filter');
-      slideDownShow(portfolioInfo);
-      } else  {
+      if (portfolioInfo.className === '') {
+        e.target.classList.toggle('no-filter');
+        slideDownShow(portfolioInfo);
+      } else {
         e.target.classList.toggle('no-filter');
         slideDownHide(portfolioInfo)
       }
@@ -44,28 +44,28 @@ document.addEventListener('DOMContentLoaded', ()=> {
   })
 
   skillsList.addEventListener('click', (e) => {
-    if(e.target !== skillsList) {
+    if (e.target !== skillsList) {
       const skillSection = e.target.closest('section');
       const skillItems = skillsList.querySelectorAll('.skill');
-      if(skillSection) {
-        if(skillSection.className === '') {
+      if (skillSection) {
+        if (skillSection.className === '') {
           skillSection.className = 'open'
-        let counter = 0;
-        setInterval(() => {
-          if(counter < 4) {
-          console.log(counter);
-          slideDownShow(skillItems[counter])
-          counter++
+          let counter = 0;
+          setInterval(() => {
+            if (counter < 4) {
+              console.log(counter);
+              slideDownShow(skillItems[counter])
+              counter++
+            }
+          }, 40);
+        } else {
+          skillSection.className = '';
+          for (let i = 0; i < skillItems.length; i++) {
+            let skillItem = skillItems[i];
+            slideDownHide(skillItem);
           }
-        }, 40);
-      } else {
-        skillSection.className = '';
-        for(let i=0; i < skillItems.length; i++) {
-          let skillItem = skillItems[i];
-          slideDownHide(skillItem);
         }
       }
-    }
     }
   })
 

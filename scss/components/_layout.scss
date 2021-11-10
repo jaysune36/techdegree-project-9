@@ -74,6 +74,12 @@
   }
 }
 
+#skills {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .skills {
   text-align: center;
   & .skill {
@@ -88,12 +94,16 @@
 }
 
 section {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #c0c0c0;
 }
 
 .portfolio-item {
   margin-top: .5em;
   text-align: center;
+  border-bottom: 1px solid #c0c0c0;
+  &:last-child {
+    border-bottom: none;
+  }
   & p{
     font-size: 1.5rem;
   }

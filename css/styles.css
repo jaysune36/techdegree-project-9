@@ -482,6 +482,10 @@ section .heading-sub-four {
   cursor: pointer;
 }
 
+#skills:hover {
+  cursor: pointer;
+}
+
 .skills {
   text-align: center;
 }
@@ -496,12 +500,16 @@ section .heading-sub-four {
 }
 
 section {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #c0c0c0;
 }
 
 .portfolio-item {
   margin-top: 0.5em;
   text-align: center;
+  border-bottom: 1px solid #c0c0c0;
+}
+.portfolio-item:last-child {
+  border-bottom: none;
 }
 .portfolio-item p {
   font-size: 1.5rem;
