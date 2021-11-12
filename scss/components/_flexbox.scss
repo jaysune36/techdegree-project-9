@@ -1,7 +1,10 @@
 //Flexbox
 
 .main-header,
-.nav-bar {
+.nav-bar,
+.contact-links,
+.email,
+.git {
   display: flex;
 }
 
@@ -14,3 +17,13 @@
   justify-content: center;
   align-content: center;
 }
+
+.contact-links {
+  flex-direction: row;
+}
+
+.email,
+.git {
+  justify-content: center;
+}
+

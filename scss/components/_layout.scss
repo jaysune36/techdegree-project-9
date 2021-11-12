@@ -74,36 +74,60 @@
   }
 }
 
-@keyframes html {
+// @keyframes html {
+//   0% {
+//     // content: ' \003E';
+//     transform: scale(.5);
+//   }
+
+//   30% {
+//     // content: ' \003E';
+//     transform: scale(2.1);
+//   }
+//   70% {
+//     transform: scale(1);
+//     // content: ' \003E';
+//   }
+// }
+
+@keyframes trace {
   0% {
-    content: ' \003E';
-    transform: translateX(-20px);
+    fill: transparent;
   }
+  100%{
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes html-fill {
   100% {
-    transform: translateX(20px);
-    content: ' \003E';
+    fill: #d51406;
+  }
+}
+
+@keyframes sass-fill {
+  100% {
+    fill: #e52489;
   }
 }
 
 #skills {
+  transition: all .5s ease-in-out;
   &:hover {
     cursor: pointer;
   }
 }
 
 .html {
-  & svg:hover {
-    fill: #d51406;
-  }
-  & .html-svg:hover::before {
+  & .html-logo:hover {
     font-size: 2.5em;
-    animation: html 1s ease-in-out infinite alternate;
-    // content: ' \003C';
-  }
-  & .html-svg:hover::after {
-    font-size: 2.5em;
-    animation: html 1s linear forwards;
-    // content: ' \003E';
+    stroke: #d51406;
+    stroke-width: .5;
+    stroke-dasharray: 105;
+    stroke-dashoffset: 105;
+    animation: trace 3s linear forwards,
+               html-fill .8s 3s forwards;
   }
 }
 
@@ -120,8 +144,14 @@
 }
 
 .sass {
-  & svg:hover {
-    fill: #e52489;  
+  & .sass-logo:hover {
+    font-size: 2.5em;
+    stroke: #e52489;
+    stroke-width: .5;
+    stroke-dasharray: 105;
+    stroke-dashoffset: 105;
+    animation: trace 3s linear forwards,
+               sass-fill .8s 3s forwards;
   }
 }
 
@@ -158,3 +188,21 @@ section {
     overflow: hidden;
   }
 }
+
+.contact-info {
+  padding-bottom: 3rem;
+  & p {
+    text-align: center;
+    font-size: 1.5em;
+  }
+  & .email, & .git {
+    width: 50%;
+    @include center;
+  }
+}
+
+
+
+
+
+
