@@ -514,7 +514,10 @@ footer .heading-sub-four {
   cursor: pointer;
 }
 
-.html .html-logo:hover {
+.html-svg {
+  display: inline;
+}
+.html-svg:hover .html-logo {
   font-size: 2.5em;
   stroke: #d51406;
   stroke-width: 0.5;
@@ -523,15 +526,36 @@ footer .heading-sub-four {
   animation: trace 3s linear forwards, html-fill 0.8s 3s forwards;
 }
 
-.css svg:hover {
+.css-svg {
+  display: inline;
+}
+.css-svg .css-logo {
+  transition: transform 0.5s ease-in-out;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+.css-svg:hover .css-logo {
   fill: #2683c8;
+  transform: rotateY(180deg);
 }
 
-.js svg:hover {
+.js-svg {
+  display: inline;
+}
+.js-svg .js-logo {
+  transition: transform 0.5s ease-in-out;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+.js-svg:hover .js-logo {
   fill: #f5e936;
+  transform: scale(1.3);
 }
 
-.sass .sass-logo:hover {
+.sass-svg {
+  display: inline;
+}
+.sass-svg:hover .sass-logo {
   font-size: 2.5em;
   stroke: #e52489;
   stroke-width: 0.5;

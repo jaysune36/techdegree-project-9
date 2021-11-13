@@ -74,22 +74,6 @@
   }
 }
 
-// @keyframes html {
-//   0% {
-//     // content: ' \003E';
-//     transform: scale(.5);
-//   }
-
-//   30% {
-//     // content: ' \003E';
-//     transform: scale(2.1);
-//   }
-//   70% {
-//     transform: scale(1);
-//     // content: ' \003E';
-//   }
-// }
-
 @keyframes trace {
   0% {
     fill: transparent;
@@ -119,8 +103,9 @@
   }
 }
 
-.html {
-  & .html-logo:hover {
+.html-svg {
+  display: inline;
+  &:hover .html-logo {
     font-size: 2.5em;
     stroke: #d51406;
     stroke-width: .5;
@@ -131,20 +116,35 @@
   }
 }
 
-.css {
-  & svg:hover {
+.css-svg {
+  display: inline;
+  & .css-logo  {
+    transition: transform .5s ease-in-out;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+  }
+  &:hover .css-logo {
     fill: #2683c8;
+    transform: rotateY(180deg);
   }
 }
 
-.js {
-  & svg:hover {
+.js-svg {
+  display: inline;
+  & .js-logo {
+    transition: transform .5s ease-in-out;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+  }
+  &:hover .js-logo {
     fill: #f5e936;
+    transform: scale(1.3);
   }
 }
 
-.sass {
-  & .sass-logo:hover {
+.sass-svg {
+  display: inline;
+  &:hover .sass-logo {
     font-size: 2.5em;
     stroke: #e52489;
     stroke-width: .5;
