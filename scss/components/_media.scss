@@ -50,7 +50,31 @@
       filter: grayscale(0%);
     }
   }
+  #scroll {
+    display: inline-block;
+    position: absolute;
+    z-index: 20;
+    & .scroll-left,
+    & .scroll-right {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1em .5em;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    }
+  }
+  .portfolio-list {
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    & p {
+      display: none;
+    }
+  }
   .portfolio-item {
+    display: inline-block;
+    margin-right: 5em;
     width: 50%;
+    border-bottom: none;
   }
 }
