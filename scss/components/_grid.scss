@@ -1,7 +1,12 @@
 //Grid
-
+.grid-container,
 .skills {
   display: grid;
+}
+
+.grid-container {
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
 }
 
 .skills {

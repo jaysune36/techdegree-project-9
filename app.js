@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const info = aboutInfo.querySelector('.display');
   const skillsList = document.getElementById('skills')
   const portfolio = document.getElementById('portfolio');
+  const contactInfo = document.getElementById('contact');
 
   function slideDownShow(element) {
     element.classList.toggle('slide-down');
@@ -68,5 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   })
+
 
 })

@@ -4,7 +4,9 @@
 .nav-bar,
 .contact-links,
 .email,
-.git {
+.git,
+.facebook,
+.twitter {
   display: flex;
 }
 
@@ -20,10 +22,13 @@
 
 .contact-links {
   flex-direction: row;
+  justify-content: center;
 }
 
 .email,
-.git {
+.git,
+.facebook,
+.twitter {
   justify-content: center;
 }
 

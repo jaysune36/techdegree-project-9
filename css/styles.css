@@ -380,7 +380,7 @@ img {
 }
 
 svg {
-  width: 20%;
+  width: 100%;
 }
 
 section h2,
@@ -510,6 +510,9 @@ footer .heading-sub-four {
 #skills {
   transition: all 0.5s ease-in-out;
 }
+#skills svg {
+  max-width: 20%;
+}
 #skills:hover {
   cursor: pointer;
 }
@@ -603,15 +606,39 @@ section {
 }
 .contact-info p {
   text-align: center;
-  font-size: 1.5em;
+  color: #d3d3d3;
+  position: relative;
+  font-size: 3em;
+  font-style: italic;
 }
-.contact-info .email, .contact-info .git {
-  width: 50%;
-  margin: 0 auto;
+.contact-info span {
+  color: #000;
+  font-size: 0.75em;
+  position: absolute;
+  top: 50%;
+}
+.contact-info .footer-sub {
+  left: 50%;
 }
 
+.contact-links {
+  display: inline;
+}
+.contact-links a {
+  width: 40%;
+}
+.contact-links svg:hover {
+  cursor: pointer;
+}
+
+.grid-container,
 .skills {
   display: grid;
+}
+
+.grid-container {
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
 }
 
 .skills {
@@ -623,7 +650,9 @@ section {
 .nav-bar,
 .contact-links,
 .email,
-.git {
+.git,
+.facebook,
+.twitter {
   display: flex;
 }
 
@@ -639,14 +668,53 @@ section {
 
 .contact-links {
   flex-direction: row;
-}
-
-.email,
-.git {
   justify-content: center;
 }
 
+.email,
+.git,
+.facebook,
+.twitter {
+  justify-content: center;
+}
+
+@media (min-width: 485px) {
+  footer h2 {
+    margin-bottom: 0;
+  }
+
+  .contact-info {
+    display: flex;
+    padding-bottom: 0;
+  }
+
+  .contact-info {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contact-links {
+    width: 50%;
+  }
+}
 @media (min-width: 768px) {
+  .grid-main {
+    display: grid;
+    grid-template-columns: 50%;
+  }
+
+  #about {
+    grid-column: 1/span 1;
+  }
+
+  #skills {
+    grid-column: 2/span 1;
+  }
+
+  #portfolio {
+    grid-column: 1/span 2;
+  }
+
   .main-header .main-name {
     opacity: 0;
   }

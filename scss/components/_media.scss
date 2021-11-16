@@ -1,6 +1,37 @@
 // Media Queries
 
+@media (min-width: 485px) {
+  footer h2 {
+    margin-bottom: 0;
+  }
+  .contact-info {
+    display: flex;
+    padding-bottom: 0;
+  }
+  .contact-info {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contact-links {
+    width: 50%;
+  }
+}
+
 @media(min-width: 768px) {
+  .grid-main {
+    display: grid;
+    grid-template-columns: 50%;
+  }
+  #about {
+    grid-column: 1 / span 1;
+  }
+  #skills {
+    grid-column: 2 / span 1;
+  }
+  #portfolio {
+    grid-column: 1 / span 2;
+  }
+
   .main-header {
     & .main-name {
       opacity: 0;

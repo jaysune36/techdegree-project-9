@@ -98,6 +98,9 @@
 
 #skills {
   transition: all .5s ease-in-out;
+  & svg {
+    max-width: 20%;
+  }
   &:hover {
     cursor: pointer;
   }
@@ -193,16 +196,30 @@ section {
   padding-bottom: 3rem;
   & p {
     text-align: center;
-    font-size: 1.5em;
+    color: #d3d3d3;
+    position: relative;
+    font-size: 3em;
+    font-style: italic;
   }
-  & .email, & .git {
-    width: 50%;
-    @include center;
+  & span {
+    color: #000;
+    font-size: .75em;
+    position: absolute;
+    top: 50%;
+  }
+  & .footer-sub {
+    left: 50%;
   }
 }
 
-
-
-
+.contact-links {
+  display: inline;
+  & a {
+    width: 40%;
+  }
+  & svg:hover {
+    cursor: pointer;
+  }
+}
 
 
