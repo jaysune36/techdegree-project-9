@@ -5,17 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const skillsList = document.getElementById('skills')
   const portfolio = document.getElementById('portfolio');
   const contactInfo = document.getElementById('contact');
+  const media768 = window.matchMedia('(max-width: 768px)');
+
 
   function slideDownShow(element) {
+    if(media768.matches) {
     element.classList.toggle('slide-down');
     element.style.overflow = '';
     element.style.maxHeight = '100%';
+    }
   }
 
   function slideDownHide(element) {
+    if(media768.matches) {
     element.classList.toggle('slide-down');
     element.style.overflow = 'hidden';
     element.style.maxHeight = '0';
+    }
   }
 
   aboutInfo.addEventListener('click', (e) => {
@@ -54,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
           let counter = 0;
           setInterval(() => {
             if (counter < 4) {
-              console.log(counter);
               slideDownShow(skillItems[counter])
               counter++
             }
