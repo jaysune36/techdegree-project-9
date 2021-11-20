@@ -584,6 +584,12 @@ section {
   border-bottom: 1px solid #c0c0c0;
 }
 
+.portfolio-list p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
 .portfolio-item {
   margin-top: 0.5em;
   text-align: center;
@@ -591,9 +597,6 @@ section {
 }
 .portfolio-item:last-child {
   border-bottom: none;
-}
-.portfolio-item p {
-  font-size: 1.5rem;
 }
 .portfolio-item .portfolio-info p {
   font-size: 1rem;
@@ -704,11 +707,11 @@ section {
   }
 
   #about {
-    grid-column: 1/span 1;
+    grid-column: 1/span 2;
   }
 
   #skills {
-    grid-column: 2/span 1;
+    grid-column: 1/span 2;
   }
 
   #portfolio,
@@ -735,14 +738,6 @@ main {
     border-bottom: 1px solid #fff;
   }
 
-  .portfolio-list {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-auto-rows: minmax(150px, auto);
-    grid-gap: 20px;
-  }
-
   .main-header .main-name {
     opacity: 0;
   }
@@ -754,34 +749,56 @@ main {
     cursor: pointer;
   }
 
+  section {
+    border-bottom: none;
+  }
+  section:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+
+  #about .display {
+    max-height: 100%;
+    overflow: visible;
+  }
+
+  #skills h2 {
+    text-align: end;
+  }
+  #skills .heading-sub-two {
+    left: 0;
+    right: 20px;
+  }
+  #skills .skill {
+    max-height: 100%;
+    overflow: visible;
+  }
+
   .portfolio-item {
-    display: inline-block;
     margin-right: 5em;
     border-bottom: none;
     position: relative;
+    display: flex;
+  }
+  .portfolio-item .portfolio-info {
+    align-self: center;
   }
   .portfolio-item img {
     height: 100%;
     max-height: 210px;
-  }
-  .portfolio-item .portfolio-info {
-    transition: all 0.7s ease-in-out;
-    top: 50%;
-    left: 10%;
-    position: absolute;
-    opacity: 0;
-    width: 80%;
-  }
-  .portfolio-item:hover .portfolio-info {
-    opacity: 1;
-  }
-  .portfolio-item:hover img {
-    opacity: 0.5;
-    cursor: pointer;
-    filter: grayscale(50%);
+    width: 100%;
+    max-width: 300px;
   }
   .portfolio-item .portfolio-info p {
+    max-height: 100%;
     overflow: visible;
+  }
+
+  #contact h2 {
+    text-align: end;
+  }
+  #contact .heading-sub-four {
+    left: 0;
+    right: 20px;
   }
 }
 

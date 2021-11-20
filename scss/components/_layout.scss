@@ -174,16 +174,19 @@
 section {
   border-bottom: 1px solid #c0c0c0;
 }
-
+.portfolio-list {
+  & p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: .5em;
+  }
+}
 .portfolio-item {
   margin-top: .5em;
   text-align: center;
   border-bottom: 1px solid #c0c0c0;
   &:last-child {
     border-bottom: none;
-  }
-  & p{
-    font-size: 1.5rem;
   }
   & .portfolio-info p {
     font-size: 1rem;
