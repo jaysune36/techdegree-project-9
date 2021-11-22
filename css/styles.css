@@ -584,10 +584,13 @@ section {
   border-bottom: 1px solid #c0c0c0;
 }
 
-.portfolio-list p {
+.portfolio-list .mobile-title {
   font-size: 1.5rem;
   text-align: center;
   margin-top: 0.5em;
+}
+.portfolio-list .tablet-title {
+  visibility: hidden;
 }
 
 .portfolio-item {
@@ -773,14 +776,24 @@ main {
     overflow: visible;
   }
 
+  .portfolio-list .mobile-title {
+    visibility: hidden;
+  }
+
   .portfolio-item {
     margin-right: 5em;
+    margin-bottom: 5em;
     border-bottom: none;
-    position: relative;
     display: flex;
+    flex-direction: row;
+  }
+  .portfolio-item:nth-child(4n-2) {
+    flex-direction: row-reverse;
   }
   .portfolio-item .portfolio-info {
     align-self: center;
+    width: 50%;
+    margin: 0 3em;
   }
   .portfolio-item img {
     height: 100%;
@@ -791,6 +804,12 @@ main {
   .portfolio-item .portfolio-info p {
     max-height: 100%;
     overflow: visible;
+  }
+  .portfolio-item .tablet-title {
+    visibility: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0.5em;
   }
 
   #contact h2 {

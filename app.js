@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   portfolio.addEventListener('click', (e) => {
     if (e.target.tagName === 'IMG') {
-      const portfolioInfo = e.target.nextElementSibling.firstElementChild;
+      const portfolioInfo = e.target.nextElementSibling.lastElementChild;
       if (portfolioInfo.className === '') {
         e.target.classList.toggle('no-filter');
         slideDownShow(portfolioInfo);

@@ -175,10 +175,13 @@ section {
   border-bottom: 1px solid #c0c0c0;
 }
 .portfolio-list {
-  & p {
+  & .mobile-title {
     font-size: 1.5rem;
     text-align: center;
     margin-top: .5em;
+  }
+  & .tablet-title {
+    visibility: hidden;
   }
 }
 .portfolio-item {
