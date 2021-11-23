@@ -174,6 +174,9 @@
 section {
   border-bottom: 1px solid #c0c0c0;
 }
+.view {
+  visibility: hidden;
+}
 .portfolio-list {
   & .mobile-title {
     font-size: 1.5rem;

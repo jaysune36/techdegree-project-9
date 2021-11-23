@@ -584,6 +584,10 @@ section {
   border-bottom: 1px solid #c0c0c0;
 }
 
+.view {
+  visibility: hidden;
+}
+
 .portfolio-list .mobile-title {
   font-size: 1.5rem;
   text-align: center;
@@ -776,36 +780,104 @@ main {
     overflow: visible;
   }
 
+  .active {
+    background-color: #c0c0c0;
+    opacity: 0.5;
+  }
+
+  .view {
+    visibility: visible;
+    display: flex;
+    flex-direction: row;
+    margin-left: 3em;
+  }
+  .view .list-view, .view .grid-view {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 0.5em;
+  }
+  .view .grid-view {
+    margin-left: 1em;
+  }
+  .view .list-view:hover, .view .grid-view:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
   .portfolio-list .mobile-title {
-    visibility: hidden;
+    display: none;
   }
 
   .portfolio-item {
     margin-right: 5em;
     margin-bottom: 5em;
+  }
+
+  .list {
     border-bottom: none;
     display: flex;
     flex-direction: row;
   }
-  .portfolio-item:nth-child(4n-2) {
+  .list:nth-child(4n-2) {
     flex-direction: row-reverse;
   }
-  .portfolio-item .portfolio-info {
+  .list .portfolio-info {
     align-self: center;
     width: 50%;
     margin: 0 3em;
   }
-  .portfolio-item img {
+  .list img {
     height: 100%;
     max-height: 210px;
     width: 100%;
     max-width: 300px;
   }
-  .portfolio-item .portfolio-info p {
+  .list .portfolio-info p {
     max-height: 100%;
     overflow: visible;
   }
-  .portfolio-item .tablet-title {
+  .list .tablet-title {
+    visibility: visible;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0.5em;
+  }
+
+  .grid {
+    margin: 0 auto;
+    border-bottom: none;
+    margin-top: 2em;
+    display: grid;
+    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: minmax(150px, auto);
+  }
+  .grid img {
+    width: 100%;
+    height: 200px;
+  }
+  .grid .portfolio-item {
+    border-bottom: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .grid .portfolio-info p:last-child {
+    position: absolute;
+    top: 5%;
+    opacity: 0;
+  }
+  .grid.portfolio-info p:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .grid .portfolio-info p {
+    max-height: 100%;
+    overflow: visible;
+  }
+  .grid .tablet-title {
     visibility: visible;
     font-size: 1.5rem;
     text-align: center;

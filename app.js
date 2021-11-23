@@ -38,6 +38,32 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   portfolio.addEventListener('click', (e) => {
+    if(e.target.tagName === 'DIV' || e.target.parentElement.tagName === 'DIV' || e.target.parentElement.parentElement.tagName === 'DIV' ) {
+      const view = e.target.closest('div');
+      const viewClass = view.className;
+      const portfolioList = portfolio.querySelector('.portfolio-list')
+      const portfolioItems = portfolioList.querySelectorAll('.portfolio-item');
+      if(view.className === 'list-view'){
+        view.className = viewClass + ' active';
+        const listView = view.nextElementSibling;
+        listView.classList.remove('active');
+        portfolioList.classList.remove('grid')
+        for(let i=0; i<portfolioItems.length; i++) {
+          let portfolioItem = portfolioItems[i];
+          portfolioItem.classList.add('list');
+        }
+      }
+      if(view.className === 'grid-view') {
+        view.className = viewClass + ' active';
+        const listView = view.previousElementSibling;
+        listView.classList.remove('active');
+        for(let i=0; i<portfolioList.length; i++) {
+          let portfolioItem = portfolioItems[i];
+          portfolioItem.classList.remove('list');
+        }
+        portfolioList.classList.add('grid');
+      }
+    }
     if (e.target.tagName === 'IMG') {
       const portfolioInfo = e.target.nextElementSibling.lastElementChild;
       if (portfolioInfo.className === '') {
