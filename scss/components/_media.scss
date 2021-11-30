@@ -65,7 +65,7 @@
   section {
     border-bottom: none;
     &:nth-child(odd) {
-      background-color: #f9f9f9;
+      background-color: #e8e8e8;
     }
   }
   #about {
@@ -87,6 +87,10 @@
       overflow: visible;
     }
   }
+  .header-container {
+    display: flex;
+    align-items: center;
+  }
   .active {
     background-color: #c0c0c0;
     opacity: .5;
@@ -101,11 +105,13 @@
       width: 40px;
       height: 40px;
       border: 1px solid #c0c0c0;
-      border-radius: 5px;
       padding: .5em;
     }
     & .grid-view {
-      margin-left: 1em;
+      border-radius: 0 5px 5px 0;
+    }
+    & .list-view {
+      border-radius: 5px 0 0 5px;
     }
     & .list-view:hover,
     & .grid-view:hover {
@@ -122,6 +128,10 @@
     margin-right: 5em;
     margin-bottom: 5em;
   }
+  img:hover {
+    cursor: pointer;
+  }
+  //List view for portfolio
   .list {
     border-bottom: none;
     display: flex;
@@ -140,6 +150,10 @@
       width: 100%;
       max-width: 300px;
     }
+    & img:hover {
+      filter: grayscale(0);
+      transition: filter .5s ease-in-out;
+    }
     & .portfolio-info p{
       max-height: 100%;
       overflow: visible;
@@ -151,6 +165,7 @@
     margin-top: .5em;
     }
   }
+  //Grid view for portfolio
   .grid {
     @include center;
     border-bottom: none;
@@ -159,24 +174,23 @@
     max-width: 1000px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: minmax(150px, auto);
+    gap: 40px;
     & img {
-      width: 100%;
       height: 200px;
     }
     & .portfolio-item {
+      @include center;
+      width: 100%;
       border-bottom: none;
       position: relative;
       display: flex;
       flex-direction: column;
+      justify-content: center;
     }
-    .portfolio-info p:last-child {
+    & .portfolio-info p:last-child {
       position: absolute;
       top: 5%;
       opacity: 0;
-    }
-    &.portfolio-info p:hover {
-      opacity: 1;
-      cursor: pointer;
     }
     & .portfolio-info p{
       max-height: 100%;
@@ -187,6 +201,14 @@
     font-size: 1.5rem;
     text-align: center;
     margin-top: .5em;
+    }
+    & .portfolio-info p:last-child:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+    & img:hover{
+      filter: grayscale(0);
+      transition: filter .5s ease-in-out;
     }
   }
   #contact {
