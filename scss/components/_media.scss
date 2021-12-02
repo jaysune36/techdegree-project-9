@@ -188,9 +188,7 @@
       justify-content: center;
     }
     & .portfolio-info p:last-child {
-      position: absolute;
-      top: 5%;
-      opacity: 0;
+      display: none;
     }
     & .portfolio-info p{
       max-height: 100%;
@@ -201,10 +199,6 @@
     font-size: 1.5rem;
     text-align: center;
     margin-top: .5em;
-    }
-    & .portfolio-info p:last-child:hover {
-      opacity: 1;
-      cursor: pointer;
     }
     & img:hover{
       filter: grayscale(0);
