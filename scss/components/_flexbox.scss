@@ -2,6 +2,7 @@
 
 .main-header,
 .nav-bar,
+.scroll-arrow,
 .contact-links,
 .email,
 .git,
@@ -18,6 +19,10 @@
 .nav-bar {
   justify-content: center;
   align-items: center;
+}
+
+.scroll-arrow {
+  justify-content: space-around;
 }
 
 .contact-links {
