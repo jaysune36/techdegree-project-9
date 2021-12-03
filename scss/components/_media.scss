@@ -125,7 +125,6 @@
     }
   }
   .portfolio-item {
-    margin-right: 5em;
     margin-bottom: 5em;
   }
   img:hover {
@@ -136,7 +135,7 @@
     border-bottom: none;
     display: flex;
     flex-direction: row;
-    &:nth-child(4n -2) {
+    &:nth-child(4n - 2) {
       flex-direction: row-reverse;
     }
     & .portfolio-info {

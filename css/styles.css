@@ -428,7 +428,7 @@ footer .heading-sub-four {
 .main-header img {
   display: block;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
 }
 .main-header .main-name {
   position: absolute;
@@ -597,6 +597,13 @@ section {
   visibility: hidden;
 }
 
+.skill-used {
+  position: absolute;
+}
+.skill-used svg {
+  width: 20%;
+}
+
 .portfolio-item {
   margin-top: 0.5em;
   text-align: center;
@@ -609,6 +616,9 @@ section {
   font-size: 1rem;
   max-height: 0;
   overflow: hidden;
+}
+.portfolio-item img {
+  position: relative;
 }
 
 .contact-info {
@@ -881,7 +891,6 @@ main {
   }
 
   .portfolio-item {
-    margin-right: 5em;
     margin-bottom: 5em;
   }
 
