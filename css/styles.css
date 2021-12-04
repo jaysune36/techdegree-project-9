@@ -598,10 +598,13 @@ section {
 }
 
 .skill-used {
-  position: absolute;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
-.skill-used svg {
-  width: 20%;
+.skill-used div {
+  width: 15%;
 }
 
 .portfolio-item {
@@ -896,6 +899,15 @@ main {
 
   img:hover {
     cursor: pointer;
+  }
+
+  .skill-used div {
+    position: absolute;
+    width: 100px;
+  }
+  .skill-used .skill-two {
+    background-color: #d51406;
+    right: 10%;
   }
 
   .list {

@@ -130,6 +130,16 @@
   img:hover {
     cursor: pointer;
   }
+  .skill-used {
+    & div {
+      position: absolute;
+      width: 100px;
+    }
+    & .skill-two {
+      background-color: #d51406;
+      right: 10%;
+    }
+  }
   //List view for portfolio
   .list {
     border-bottom: none;

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const skillsList = document.getElementById('skills')
   const portfolio = document.getElementById('portfolio');
   const portfolioList = portfolio.querySelector('.portfolio-list');
-  let portfolioItems = document.querySelectorAll('.portfolio-item');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
   const modal = document.getElementById('modal');
   const contactInfo = document.getElementById('contact');
   const media768 = window.matchMedia('(max-width: 768px)');
@@ -117,13 +117,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if(media768.matches) {
     if (e.target.tagName === 'IMG') {
-      const portfolioInfo = e.target.nextElementSibling.lastElementChild;
+      // console.log(e.target.nextElementSibling.nextElementSibling.lastElementChild);
+      const skillDisplay = e.target.nextElementSibling
+      const portfolioInfo = e.target.nextElementSibling.nextElementSibling.lastElementChild;
       if (portfolioInfo.className === '') {
         e.target.classList.toggle('no-filter');
         slideDownShow(portfolioInfo);
+        skillDisplay.style.display = 'flex';
+        slideDownShow(skillDisplay);
       } else {
         e.target.classList.toggle('no-filter');
-        slideDownHide(portfolioInfo)
+        slideDownHide(portfolioInfo);
+        skillDisplay.style.display = 'none';
+        slideDownShow(skillDisplay);
       }
     }
   }

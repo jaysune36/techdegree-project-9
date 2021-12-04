@@ -188,9 +188,12 @@ section {
   }
 }
 .skill-used {
-  position: absolute;
-  & svg {
-    width: 20%;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  & div {
+    width: 15%;
   }
 }
 .portfolio-item {
