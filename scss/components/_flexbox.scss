@@ -25,14 +25,17 @@
   justify-content: space-around;
 }
 
-.contact-links {
+.contact-links,
+.skill-used {
   flex-direction: row;
   justify-content: center;
 }
 
+
 .email,
 .git,
-.facebook {
+.facebook,
+.twitter {
   justify-content: center;
 }
 

@@ -117,14 +117,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if(media768.matches) {
     if (e.target.tagName === 'IMG') {
-      // console.log(e.target.nextElementSibling.nextElementSibling.lastElementChild);
       const skillDisplay = e.target.nextElementSibling
       const portfolioInfo = e.target.nextElementSibling.nextElementSibling.lastElementChild;
       if (portfolioInfo.className === '') {
         e.target.classList.toggle('no-filter');
         slideDownShow(portfolioInfo);
-        skillDisplay.style.display = 'flex';
-        slideDownShow(skillDisplay);
+          setTimeout(() => {
+            skillDisplay.style.display = 'flex';
+            slideDownShow(skillDisplay);
+          }, 50);
       } else {
         e.target.classList.toggle('no-filter');
         slideDownHide(portfolioInfo);
