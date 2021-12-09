@@ -137,6 +137,7 @@
     border-bottom: none;
     display: flex;
     flex-direction: row;
+    position: relative;
     &:nth-child(4n - 2) {
       flex-direction: row-reverse;
     }
@@ -146,11 +147,14 @@
       margin: 0 3em;
     }
     & img {
-      position: relative;
       height: 100%;
       max-height: 210px;
       width: 100%;
       max-width: 300px;
+    }
+    & .parent {
+      position: relative;
+      width: 100%;
     }
     & img:hover {
       filter: grayscale(0);
@@ -168,23 +172,23 @@
     }
     & .skill-used {
       display: flex;
+      width: 50px;
+      height: auto;
       max-height: 100%;
-      width: 100px;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: space-evenly;
     }
     & .skill-used div {
-      width: 30px;
+      display: inline-block;
+      @include center;
+      width: 90%;
     }
-    & .skill-used:nth-child(2n-5) {
-      align-items: flex-end;
+    & img:hover div {
       background-color: red;
     }
-    // & .skill-one,
-    // & .skill-two,
-    // & .skill-three {
-    //   align-content: center;
+    // &:nth-child(4n) > .skill-used {
+      
     // }
   }
   //Grid view for portfolio
