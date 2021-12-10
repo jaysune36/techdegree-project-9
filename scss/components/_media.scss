@@ -129,9 +129,9 @@
   .portfolio-item {
     margin-bottom: 5em;
   }
-  img:hover {
-    cursor: pointer;
-  }
+  // img:hover {
+  //   cursor: pointer;
+  // }
   //List view for portfolio
   .list {
     border-bottom: none;
@@ -147,6 +147,7 @@
       margin: 0 3em;
     }
     & img {
+      display: block;
       height: 100%;
       max-height: 210px;
       width: 100%;
@@ -170,26 +171,63 @@
     text-align: center;
     margin-top: .5em;
     }
+    & .img-wrapper {
+      position: relative;
+    }
     & .skill-used {
+      position: absolute;
+      top: 20%;
       display: flex;
-      width: 50px;
+      // width: 50px;
+      width: 100%;
       height: auto;
       max-height: 100%;
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
+      // align-items: flex-start;
       justify-content: space-evenly;
+      // opacity: 1;
     }
     & .skill-used div {
-      display: inline-block;
-      @include center;
-      width: 90%;
+      display: inline;
+      // @include center;
+      // width: 90%;
     }
-    & img:hover div {
-      background-color: red;
+    & .skill-used > div {
+      width: 100%;
+      display: block;
+      opacity: 0;
     }
+    & .img-wrapper:hover img {
+      opacity: .5;
+    }
+    & .img-wrapper:hover .skill-one {
+      animation: fade-in 1s ease-in-out forwards;
+    }
+    & .img-wrapper:hover .skill-two {
+      animation: fade-in 1s ease-in-out .3s forwards;
+    }
+    & .img-wrapper:hover .skill-three {
+      animation: fade-in 1s ease-in-out .7s forwards;
+    }
+    // & .img-wrapper .skill-three:hover svg {
+    //   font-size: 2.5em;
+    // stroke: #e52489;
+    // stroke-width: .5;
+    // stroke-dasharray: 105;
+    // stroke-dashoffset: 105;
+    // animation: trace 3s linear forwards,
+    //            sass-fill .8s 3s forwards;
+    // }
+    // & .img-wrapper:hover .skill-used .skill-one{
+    //   animation: slide-out 2s ease-in-out forwards;
+    // }
+    // & .img-wrapper:hover .skill-two {
+    //   animation-delay: .3s;
+    // }
     // &:nth-child(4n) > .skill-used {
       
     // }
+    
   }
   //Grid view for portfolio
   .grid {
@@ -229,6 +267,7 @@
     & img:hover{
       filter: grayscale(0);
       transition: filter .5s ease-in-out;
+      cursor: pointer;
     }
   }
   #contact {

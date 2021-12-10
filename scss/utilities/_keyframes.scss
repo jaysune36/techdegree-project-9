@@ -1,0 +1,50 @@
+// Keyframes
+
+
+@keyframes slide-down {
+  0% {
+    height: 0;
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  90% {
+    height: auto;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes trace {
+  0% {
+    fill: transparent;
+  }
+  100%{
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes html-fill {
+  100% {
+    fill: #d51406;
+  }
+}
+
+@keyframes sass-fill {
+  100% {
+    fill: #e52489;
+  }
+}

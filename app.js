@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function slideDownHide(element) {
       element.classList.toggle('slide-down');
-      element.style.overflow = 'hidden';
+      element.style.overflow = 'null';
       element.style.maxHeight = '0';
   }
 
@@ -26,14 +26,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBox = modal.querySelector('.modal-box');
     const div = document.createElement('div');
     div.classList.add('port-item-info');
-    div.setAttribute('data-index', index)
+    div.setAttribute('data-index', index);
     div.innerHTML = `
-    <img src='${item.firstElementChild.getAttribute('src')}' alt='${item.firstElementChild.getAttribute('alt')}' class='no-filter'>
+    ${item.firstElementChild.innerHTML}
     <div class='port-modal-info'>
       ${item.lastElementChild.innerHTML}
     </div>
-  `;
+    `;
+  //   div.innerHTML = `
+  //   <img src='${item.firstElementChild.firstElementChild.getAttribute('src')}' alt='${item.firstElementChild.firstElementChild.getAttribute('alt')}' class='no-filter'>
+  //   <div class='port-modal-info'>
+  //   <div class='skill-used'>
+  //     ${item.firstElementChild.firstElementChild.nextElementSibling.innerHTML}
+  //   </div>
+  //     ${item.lastElementChild.innerHTML}
+  //   </div>
+  // `;
     modalBox.insertAdjacentElement('beforeend', div);
+    console.log(item.firstElementChild);
   }
 
   aboutInfo.addEventListener('fullscreenchange', (e) => {
@@ -118,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if(media768.matches) {
     if (e.target.tagName === 'IMG') {
       const skillDisplay = e.target.nextElementSibling
-      const portfolioInfo = e.target.nextElementSibling.nextElementSibling.lastElementChild;
+      const portfolioInfo = e.target.parentElement.nextElementSibling.lastElementChild
+      console.log(portfolioInfo)
       if (portfolioInfo.className === '') {
         e.target.classList.toggle('no-filter');
         slideDownShow(portfolioInfo);
@@ -134,10 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-    if (e.target.parentElement.parentElement.className.includes('grid') && !media768.matches) {
+    if (e.target.parentElement.parentElement.parentElement.className.includes('grid') && !media768.matches) {
       if (e.target.tagName === 'IMG') {
         modal.style.display = 'block';
-        let portModalIndex = e.target.parentElement.getAttribute('data-index');
+        let portModalIndex = e.target.parentElement.parentElement.getAttribute('data-index');
         createModal(portfolioItems[portModalIndex], portModalIndex);
       }
     }
