@@ -44,9 +44,8 @@
     max-height: 400px;
   }
   & .skill-used {
-    display: flex;
-    flex-direction: row;
-    max-height: 100%;
+    @include flexLayout(row);
+    @include visible;
     margin-top: .5rem;
   }
   & .port-modal-info {

@@ -42,8 +42,7 @@
     top: 0;
   }
   .nav-list {
-    display: flex;
-    flex-direction: row;
+    @include flexLayout(row);
     justify-content: space-between;
     width: 70%;
     font-size: 1.2em;
@@ -65,16 +64,12 @@
       cursor: pointer;
     }
   }
-  section {
-    border-bottom: none;
-    &:nth-child(odd) {
-      background-color: #e8e8e8;
-    }
-  }
+section {
+  border-bottom: none;
+}
   #about {
   .display {
-    max-height: 100%;
-    overflow: visible;
+    @include visible;
   }
   }
   #skills {
@@ -95,18 +90,17 @@
     align-items: center;
   }
   .active {
-    background-color: #c0c0c0;
+    background-color: $light-grey-border;
     opacity: .5;
   }
   .view {
-    display: flex;
-    flex-direction: row;
+    @include flexLayout(row);
     margin-left: 3em;
     & .list-view,
     & .grid-view {
       width: 40px;
       height: 40px;
-      border: 1px solid #c0c0c0;
+      border: 1px solid $light-grey-border;
       padding: .5em;
     }
     & .grid-view {
@@ -129,14 +123,10 @@
   .portfolio-item {
     margin-bottom: 5em;
   }
-  // img:hover {
-  //   cursor: pointer;
-  // }
   //List view for portfolio
   .list {
     border-bottom: none;
-    display: flex;
-    flex-direction: row;
+    @include flexLayout(row);
     position: relative;
     &:nth-child(4n - 2) {
       flex-direction: row-reverse;
@@ -147,10 +137,9 @@
       margin: 0 3em;
     }
     & img {
-      display: block;
+      @include imgBlock100;
       height: 100%;
       max-height: 210px;
-      width: 100%;
       max-width: 300px;
     }
     & .parent {
@@ -162,11 +151,10 @@
       transition: filter .5s ease-in-out;
     }
     & .portfolio-info p{
-      max-height: 100%;
-      overflow: visible;
+      @include visible;
     }
     & .tablet-title {
-    visibility: visible;
+    display: block;
     font-size: 1.5rem;
     text-align: center;
     margin-top: .5em;
@@ -175,26 +163,19 @@
       position: relative;
     }
     & .skill-used {
+      @include flexLayout(row);
+      @include visible;
+      justify-content: space-evenly;
       position: absolute;
       top: 20%;
-      display: flex;
-      // width: 50px;
       width: 100%;
       height: auto;
-      max-height: 100%;
-      flex-direction: row;
-      // align-items: flex-start;
-      justify-content: space-evenly;
-      // opacity: 1;
     }
     & .skill-used div {
       display: inline;
-      // @include center;
-      // width: 90%;
     }
     & .skill-used > div {
-      width: 100%;
-      display: block;
+      @include imgBlock100;
       opacity: 0;
     }
     & .img-wrapper:hover img {
@@ -209,24 +190,6 @@
     & .img-wrapper:hover .skill-three {
       animation: fade-in 1s ease-in-out .7s forwards;
     }
-    // & .img-wrapper .skill-three:hover svg {
-    //   font-size: 2.5em;
-    // stroke: #e52489;
-    // stroke-width: .5;
-    // stroke-dasharray: 105;
-    // stroke-dashoffset: 105;
-    // animation: trace 3s linear forwards,
-    //            sass-fill .8s 3s forwards;
-    // }
-    // & .img-wrapper:hover .skill-used .skill-one{
-    //   animation: slide-out 2s ease-in-out forwards;
-    // }
-    // & .img-wrapper:hover .skill-two {
-    //   animation-delay: .3s;
-    // }
-    // &:nth-child(4n) > .skill-used {
-      
-    // }
     
   }
   //Grid view for portfolio
@@ -247,16 +210,14 @@
       width: 100%;
       border-bottom: none;
       position: relative;
-      display: flex;
-      flex-direction: column;
+      @include flexLayout(column);
       justify-content: center;
     }
     & .portfolio-info p:last-child {
       display: none;
     }
     & .portfolio-info p{
-      max-height: 100%;
-      overflow: visible;
+      @include visible;
     }
     & .tablet-title {
     visibility: visible;

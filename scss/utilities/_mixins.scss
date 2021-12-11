@@ -3,3 +3,40 @@
 @mixin center {
   margin: 0 auto;
 }
+
+@mixin traceSVG ($font, $color, $stroke-width, $array-offset) {
+  font-size: $font;
+  stroke: $color;
+  stroke-width: $stroke-width;
+  stroke-dasharray: $array-offset;
+  stroke-dashoffset: $array-offset;
+}
+
+@mixin border($bord-type, $width, $type: solid, $color) {
+  $bord-type: $width $type $color;
+}
+
+@mixin imgBlock100 {
+  display: block;
+  width: 100%;
+}
+
+@mixin transformBoxCenter {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+@mixin flexLayout ($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin hidden {
+  overflow: hidden;
+  max-height: 0;
+}
+
+@mixin visible {
+  max-height: 100%;
+  overflow: visible;
+}

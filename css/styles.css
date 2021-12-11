@@ -506,10 +506,14 @@ footer .heading-sub-four {
   padding-left: 0.5em;
 }
 #about .display {
+  overflow: hidden;
+  max-height: 0;
   border-left: 1px solid #000;
   padding-left: 0.5em;
-  max-height: 0;
-  overflow: hidden;
+}
+#about h2 {
+  margin-top: 0;
+  padding-top: 0.5em;
 }
 #about h2:hover {
   cursor: pointer;
@@ -579,8 +583,8 @@ footer .heading-sub-four {
   text-align: center;
 }
 .skills .skill {
-  max-height: 0;
   overflow: hidden;
+  max-height: 0;
 }
 
 .slide-down {
@@ -591,9 +595,17 @@ footer .heading-sub-four {
 section {
   border-bottom: 1px solid #c0c0c0;
 }
+section:nth-child(odd) {
+  background-color: #e8e8e8;
+}
 
 .view {
   display: none;
+}
+
+#portfolio h2 {
+  margin-top: 0;
+  padding-top: 0.5em;
 }
 
 .portfolio-list .mobile-title {
@@ -602,14 +614,14 @@ section {
   margin-top: 0.5em;
 }
 .portfolio-list .tablet-title {
-  visibility: hidden;
+  display: none;
 }
 
 .skill-used {
+  overflow: hidden;
+  max-height: 0;
   display: none;
   width: 100%;
-  max-height: 0;
-  overflow: hidden;
 }
 .skill-used div {
   width: 12%;
@@ -768,6 +780,7 @@ section {
   display: flex;
   flex-direction: row;
   max-height: 100%;
+  overflow: visible;
   margin-top: 0.5rem;
 }
 .modal-box .port-modal-info {
@@ -865,9 +878,6 @@ main {
   section {
     border-bottom: none;
   }
-  section:nth-child(odd) {
-    background-color: #e8e8e8;
-  }
 
   #about .display {
     max-height: 100%;
@@ -942,9 +952,9 @@ main {
   }
   .list img {
     display: block;
+    width: 100%;
     height: 100%;
     max-height: 210px;
-    width: 100%;
     max-width: 300px;
   }
   .list .parent {
@@ -960,7 +970,7 @@ main {
     overflow: visible;
   }
   .list .tablet-title {
-    visibility: visible;
+    display: block;
     font-size: 1.5rem;
     text-align: center;
     margin-top: 0.5em;
@@ -969,21 +979,22 @@ main {
     position: relative;
   }
   .list .skill-used {
+    display: flex;
+    flex-direction: row;
+    max-height: 100%;
+    overflow: visible;
+    justify-content: space-evenly;
     position: absolute;
     top: 20%;
-    display: flex;
     width: 100%;
     height: auto;
-    max-height: 100%;
-    flex-direction: row;
-    justify-content: space-evenly;
   }
   .list .skill-used div {
     display: inline;
   }
   .list .skill-used > div {
-    width: 100%;
     display: block;
+    width: 100%;
     opacity: 0;
   }
   .list .img-wrapper:hover img {
