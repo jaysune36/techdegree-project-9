@@ -48,3 +48,32 @@
     fill: #e52489;
   }
 }
+
+@keyframes left-slide {
+  10% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(-120px);
+  }
+}
+
+@keyframes right-slide {
+  10% {
+    transform: translateX(-10px);
+  }
+  90% {
+    transform: translateX(120px);
+  }
+}
+@keyframes scale-slow {
+  30% {
+    transform: scale(.9);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+}

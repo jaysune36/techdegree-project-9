@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const mainBackground = document.getElementById('main-img')
   const aboutInfo = document.getElementById('about');
   const nav = document.querySelector('.nav-bar');
   const info = aboutInfo.querySelector('.display');
@@ -33,18 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
       ${item.lastElementChild.innerHTML}
     </div>
     `;
-  //   div.innerHTML = `
-  //   <img src='${item.firstElementChild.firstElementChild.getAttribute('src')}' alt='${item.firstElementChild.firstElementChild.getAttribute('alt')}' class='no-filter'>
-  //   <div class='port-modal-info'>
-  //   <div class='skill-used'>
-  //     ${item.firstElementChild.firstElementChild.nextElementSibling.innerHTML}
-  //   </div>
-  //     ${item.lastElementChild.innerHTML}
-  //   </div>
-  // `;
     modalBox.insertAdjacentElement('beforeend', div);
     console.log(item.firstElementChild);
   }
+
+  function moveImg() {
+    let position = 0;
+    setInterval(() => {
+      if(position === 2) {
+        position = 0;
+      } else {
+        position++;
+        mainBackground.style.transform = `scale(1.${position})`;
+        mainBackground.style.transition = 'transform 6s ease-in-out'
+      }
+    }, 300);
+  }
+
+  moveImg();
 
   aboutInfo.addEventListener('fullscreenchange', (e) => {
 
