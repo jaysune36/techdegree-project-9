@@ -1,3 +1,5 @@
+// Main Layout / Initial Layout
+
 .main-name,
 .container {
   width: 90%;
@@ -7,11 +9,13 @@
 .main-header {
   color: $primary-white;
   position: relative;
-  background-color: $black;
   text-align: center;
   & img {
     @include imgBlock100;
     height: 100vh;
+  }
+  & h1 {
+    display: inline-block;
   }
   & .main-name {
     position: absolute;
@@ -45,6 +49,7 @@
 
 #about {
   padding-left: .5em;
+  padding-bottom: 1em;
   & .display {
     @include hidden;
     border-left: 1px solid $black;
@@ -180,7 +185,7 @@ section {
 }
 
 .contact-info {
-  padding-bottom: 3rem;
+  padding-bottom: 3em;
   & p {
     text-align: center;
     color: $title-color-one;

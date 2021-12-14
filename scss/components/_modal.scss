@@ -18,7 +18,7 @@
   width: 100%;
   margin: 25% auto;
   text-align: center;
-  font-size: 2em;
+  font-size: 2rem;
   color: $primary-white;
   & .scroll-left,
   & .scroll-right {
@@ -46,10 +46,12 @@
   & .skill-used {
     @include flexLayout(row);
     @include visible;
-    margin-top: .5rem;
+    @include center;
+    width: 70%;
+    margin-top: .5em;
   }
   & .port-modal-info {
-    margin-top: 1.5rem ;
+    margin-top: 1.5em ;
     border-radius: 5px;
   }
   & .port-modal-info p {

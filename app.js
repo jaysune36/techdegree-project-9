@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {
+    if(localStorage.getItem('portfolioView') === 'list-view'){
+    portfolioView(localStorage.getItem('portfolioView'));
+    }
+    if(localStorage.getItem('portfolioView') === 'grid-view'){
+      portfolioView(localStorage.getItem('portfolioView'));
+      const gridView = document.querySelector('.grid-view');
+      const listView = document.querySelector('.list-view');
+      gridView.classList.add('active');
+      listView.classList.remove('active');
+    }
+  })
+
+
   const mainBackground = document.getElementById('main-img')
   const aboutInfo = document.getElementById('about');
   const nav = document.querySelector('.nav-bar');
@@ -41,17 +55,39 @@ document.addEventListener('DOMContentLoaded', () => {
   function moveImg() {
     let position = 0;
     setInterval(() => {
-      if(position === 2) {
-        position = 0;
+      if(mainBackground.style.transform === `scale(1.3)`) {
+        mainBackground.style.transform = `scale(1)`;
+        mainBackground.style.transition = 'transform 15s ease-in-out'
       } else {
-        position++;
-        mainBackground.style.transform = `scale(1.${position})`;
-        mainBackground.style.transition = 'transform 6s ease-in-out'
+        mainBackground.style.transform = `scale(1.3)`;
+        mainBackground.style.transition = 'transform 15s ease-in-out'
       }
-    }, 300);
+    }, 20000);
   }
 
+  function portfolioView(viewType) {
+    let index = 0;
+    if(viewType.includes('list-view')) {
+      for (let i = 0; i < portfolioItems.length; i++) {
+        let portfolioItem = portfolioItems[i];
+        portfolioItem.classList.add('list');
+        portfolioItem.removeAttribute('data-index');
+      }
+    } 
+    if (viewType.includes('grid-view')) {
+      portfolioList.classList.add('grid');
+      for (let i = 0; i < portfolioItems.length; i++) {
+        let portfolioItem = portfolioItems[i];
+        portfolioItem.setAttribute('data-index', index);
+        portfolioItem.classList.remove('list');
+        index++
+      }
+    }
+  }
+
+  if(!media768.matches) {
   moveImg();
+  }
 
   aboutInfo.addEventListener('fullscreenchange', (e) => {
 
@@ -106,37 +142,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.tagName === 'DIV' || e.target.parentElement.tagName === 'DIV' || e.target.parentElement.parentElement.tagName === 'DIV') {
       const view = e.target.closest('div');
       const viewClass = view.className;
-      let index = 0;
       if (view.className === 'list-view') {
         view.className = viewClass + ' active';
         const listView = view.nextElementSibling;
         listView.classList.remove('active');
-        portfolioList.classList.remove('grid')
-        for (let i = 0; i < portfolioItems.length; i++) {
-          let portfolioItem = portfolioItems[i];
-          portfolioItem.classList.add('list');
-          portfolioItem.removeAttribute('data-index');
-        }
+        portfolioList.classList.remove('grid');
+        localStorage.setItem('portfolioView', 'list-view');
+        portfolioView(view.className);
         index = 0;
       }
       if (view.className === 'grid-view') {
         view.className = viewClass + ' active';
         const listView = view.previousElementSibling;
         listView.classList.remove('active');
-        for (let i = 0; i < portfolioItems.length; i++) {
-          let portfolioItem = portfolioItems[i];
-          portfolioItem.setAttribute('data-index', index);
-          portfolioItem.classList.remove('list');
-          index++
-        }
-        portfolioList.classList.add('grid');
+        localStorage.setItem('portfolioView', 'grid-view');
+        portfolioView(view.className);
       }
     }
     if(media768.matches) {
     if (e.target.tagName === 'IMG') {
       const skillDisplay = e.target.nextElementSibling
-      const portfolioInfo = e.target.parentElement.nextElementSibling.lastElementChild
-      console.log(portfolioInfo)
+      const portfolioInfo = e.target.parentElement.nextElementSibling.lastElementChild;
       if (portfolioInfo.className === '') {
         e.target.classList.toggle('no-filter');
         slideDownShow(portfolioInfo);
