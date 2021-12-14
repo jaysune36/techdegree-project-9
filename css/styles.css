@@ -1111,5 +1111,19 @@ main {
     right: 20px;
   }
 }
+@media (min-width: 1300px) {
+  #about {
+    grid-column: 1/span 1;
+    background-color: #fff;
+  }
+
+  #skills {
+    grid-column: 2/span 1;
+  }
+  #skills h2 {
+    margin-top: 0;
+    padding-top: 0.5em;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
