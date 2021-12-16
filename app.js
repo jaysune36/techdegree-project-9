@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const mainBackground = document.getElementById('main-img');
+  const aboutInfo = document.getElementById('about');
+  const info = aboutInfo.querySelector('.display');
+  const skillsList = document.getElementById('skills');
+  const portfolio = document.getElementById('portfolio');
+  const portfolioList = portfolio.querySelector('.portfolio-list');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  const modal = document.getElementById('modal');
+  const media768 = window.matchMedia('(max-width: 768px)');
+
   window.addEventListener('load', () => {
     if(localStorage.getItem('portfolioView') === 'list-view'){
     portfolioView(localStorage.getItem('portfolioView'));
@@ -10,20 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       gridView.classList.add('active');
       listView.classList.remove('active');
     }
-  })
-
-
-  const mainBackground = document.getElementById('main-img')
-  const aboutInfo = document.getElementById('about');
-  const nav = document.querySelector('.nav-bar');
-  const info = aboutInfo.querySelector('.display');
-  const skillsList = document.getElementById('skills')
-  const portfolio = document.getElementById('portfolio');
-  const portfolioList = portfolio.querySelector('.portfolio-list');
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
-  const modal = document.getElementById('modal');
-  const contactInfo = document.getElementById('contact');
-  const media768 = window.matchMedia('(max-width: 768px)');
+  });
 
   function slideDownShow(element) {
       element.classList.toggle('slide-down');
@@ -53,16 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function moveImg() {
-    let position = 0;
     setInterval(() => {
       if(mainBackground.style.transform === `scale(1.3)`) {
         mainBackground.style.transform = `scale(1)`;
-        mainBackground.style.transition = 'transform 15s ease-in-out'
+        mainBackground.style.transition = 'transform 15s ease-in-out';
       } else {
         mainBackground.style.transform = `scale(1.3)`;
-        mainBackground.style.transition = 'transform 15s ease-in-out'
+        mainBackground.style.transition = 'transform 15s ease-in-out';
       }
     }, 20000);
+  }
+  if(!media768.matches) {
+  moveImg();
   }
 
   function portfolioView(viewType) {
@@ -72,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let portfolioItem = portfolioItems[i];
         portfolioItem.classList.add('list');
         portfolioItem.removeAttribute('data-index');
+        index = 0;
       }
     } 
     if (viewType.includes('grid-view')) {
@@ -80,21 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let portfolioItem = portfolioItems[i];
         portfolioItem.setAttribute('data-index', index);
         portfolioItem.classList.remove('list');
-        index++
+        index++;
       }
     }
   }
-
-  if(!media768.matches) {
-  moveImg();
-  }
-
-  aboutInfo.addEventListener('fullscreenchange', (e) => {
-
-    if(aboutInfo.fullscreenElement) {
-      console.log('this screen has changed')
-    }
-  })
 
   aboutInfo.addEventListener('click', (e) => {
     if (e.target !== aboutInfo) {
@@ -109,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       }
     }
-  })
+  });
 
   skillsList.addEventListener('click', (e) => {
     if(media768.matches) {
@@ -118,12 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const skillItems = skillsList.querySelectorAll('.skill');
       if (skillSection) {
         if (skillSection.className === '') {
-          skillSection.className = 'open'
+          skillSection.className = 'open';
           let counter = 0;
           setInterval(() => {
             if (counter < 4) {
-              slideDownShow(skillItems[counter])
-              counter++
+              slideDownShow(skillItems[counter]);
+              counter++;
             }
           }, 40);
         } else {
@@ -136,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-  })
+  });
 
   portfolio.addEventListener('click', (e) => {
     if (e.target.tagName === 'DIV' || e.target.parentElement.tagName === 'DIV' || e.target.parentElement.parentElement.tagName === 'DIV') {
@@ -149,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         portfolioList.classList.remove('grid');
         localStorage.setItem('portfolioView', 'list-view');
         portfolioView(view.className);
-        index = 0;
       }
       if (view.className === 'grid-view') {
         view.className = viewClass + ' active';
@@ -161,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if(media768.matches) {
     if (e.target.tagName === 'IMG') {
-      const skillDisplay = e.target.nextElementSibling
+      const skillDisplay = e.target.nextElementSibling;
       const portfolioInfo = e.target.parentElement.nextElementSibling.lastElementChild;
       if (portfolioInfo.className === '') {
         e.target.classList.toggle('no-filter');
@@ -185,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         createModal(portfolioItems[portModalIndex], portModalIndex);
       }
     }
-  })
+  });
 
   modal.addEventListener('click', (e) => {
     const portModal = document.querySelector('.port-item-info');
@@ -196,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (e.target.className === 'scroll-left') {
       if(portIndex > 0) {
-      portModal.remove()
+      portModal.remove();
       createModal(portfolioItems[parseFloat(portIndex) - 1], parseFloat(portIndex) - 1);
       } else {
         return null;
@@ -204,10 +192,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (e.target.className === 'scroll-right') {
       if(portIndex < (portfolioItems.length - 1)) {
-      portModal.remove()
+      portModal.remove();
       createModal(portfolioItems[parseFloat(portIndex) + 1], parseFloat(portIndex) + 1);
       }
     }
-  })
+  });
 
-})
+});
