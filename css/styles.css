@@ -512,7 +512,7 @@ footer .heading-sub-four {
   position: absolute;
   top: 50%;
   width: 100%;
-  margin-top: 1em;
+  padding-top: 1em;
 }
 
 .nav-list {
