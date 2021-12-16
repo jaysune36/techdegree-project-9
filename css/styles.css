@@ -505,6 +505,7 @@ footer .heading-sub-four {
   display: inline-block;
 }
 .main-header .main-name {
+  display: inline-block;
   position: absolute;
 }
 
